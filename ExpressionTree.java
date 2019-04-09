@@ -85,7 +85,7 @@ public class ExpressionTree{
  /* The sample tree would be: "(3 + (2 * 10))"     */
  public String toString(){
    if(isValue){
-
+     return getValue();
    }
    else{
 
@@ -97,7 +97,7 @@ public class ExpressionTree{
  /* The sample tree would be: "3 2 10 * +"     */
  public String toStringPostfix(){
    if(isValue){
-
+     return getValue();
    }
    else{
 
@@ -110,7 +110,7 @@ public class ExpressionTree{
 
  public String toStringPrefix(){
    if(isValue){
-
+     return getValue();
    }
    else{
 
@@ -121,7 +121,7 @@ public class ExpressionTree{
  /*return the value of the specified expression tree*/
  public double evaluate(){
    if(isValue){
-
+     return getValue();
    }
    else{
 
