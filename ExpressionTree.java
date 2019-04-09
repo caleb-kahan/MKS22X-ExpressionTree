@@ -80,12 +80,11 @@ public class ExpressionTree{
     System.out.println(ex.toStringPrefix());
     System.out.println(ex.evaluate());//10.5
   }
-  }
   /*return the expression as an infix notation string with parenthesis*/
  /* The sample tree would be: "(3 + (2 * 10))"     */
  public String toString(){
-   if(isValue){
-     return getValue();
+   if(isValue()){
+     return getValue()+"";
    }
    else{
      char op = getOp();
@@ -96,8 +95,8 @@ public class ExpressionTree{
  /*return the expression as a postfix notation string without parenthesis*/
  /* The sample tree would be: "3 2 10 * +"     */
  public String toStringPostfix(){
-   if(isValue){
-     return getValue();
+   if(isValue()){
+     return getValue()+"";
    }
    else{
       char op = getOp();
@@ -109,25 +108,23 @@ public class ExpressionTree{
  /* The sample tree would be: "+ 3 * 2 10"     */
 
  public String toStringPrefix(){
-   if(isValue){
-     return getValue();
+   if(isValue()){
+     return getValue()+"";
    }
    else{
      return op + " " + getLeft().toStringPrefix() + " " + getRight().toStringPrefix();
    }
-   return "";
  }
 
  /*return the value of the specified expression tree*/
  public double evaluate(){
-   if(isValue){
+   if(isValue()){
      return getValue();
    }
    else{
      char op = getOp();
      return apply(op, getLeft().evaluate(), getRight().evaluate());
    }
-   return 0.0;
    }
 
  /*use the correct operator on both a and b, and return that value*/
@@ -145,5 +142,4 @@ public class ExpressionTree{
       return 0;
    }
  }
-}
 }
