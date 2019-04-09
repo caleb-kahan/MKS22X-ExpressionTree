@@ -88,9 +88,9 @@ public class ExpressionTree{
      return getValue();
    }
    else{
-
+     char op = getOp();
+     return "("+ getLeft().toString() + " " + op + " " + getRight().toString() + ")";
    }
-   return "";
  }
 
  /*return the expression as a postfix notation string without parenthesis*/
@@ -100,9 +100,9 @@ public class ExpressionTree{
      return getValue();
    }
    else{
-
+      char op = getOp();
+      return getLeft().toStringPostfix() + " " + getRight().toStringPostfix() + " " + op;
    }
-   return "";
  }
 
  /*return the expression as a prefix notation string without parenthesis*/
@@ -124,7 +124,8 @@ public class ExpressionTree{
      return getValue();
    }
    else{
-
+     char op = getOp();
+     return apply(op, getLeft().evaluate(), getRight().evaluate());
    }
    return 0.0;
    }
