@@ -113,7 +113,7 @@ public class ExpressionTree{
      return getValue();
    }
    else{
-
+     return op + " " + getLeft().toStringPrefix() + " " + getRight().toStringPrefix();
    }
    return "";
  }
